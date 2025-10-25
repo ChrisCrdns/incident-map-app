@@ -51,18 +51,36 @@ body {
 }
 
 /* ---------------- Header ---------------- */
-.app-header { text-align: center; margin-bottom: 18px; }
-.app-header h1{
-  margin: 0 0 6px 0;
-  font-size: 2.6rem;
-  font-weight: 800;
-  letter-spacing: .2px;
-  background: linear-gradient(90deg, var(--brand) 0%, #7c3aed 50%, var(--brand-2) 100%);
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
+.app-header { 
+  text-align: left; 
+  margin-bottom: var(--gap); 
+  display: flex;
+  align-items: center;
+  gap: var(--gap);
 }
-.app-header p{ color: var(--muted); font-size: 1rem; margin: 0; }
+.app-header h1 {
+  margin: 0;
+  font-size: 1.75rem;
+  font-weight: 600;
+  color: var(--brand);
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.app-header h1::before {
+  content: '';
+  display: inline-block;
+  width: 3px;
+  height: 24px;
+  background: var(--brand);
+  border-radius: 2px;
+}
+.app-header p { 
+  color: var(--muted); 
+  font-size: 1rem; 
+  margin: 0;
+  font-weight: 400;
+}
 
 /* ---------------- Layout ---------------- */
 .main-content{
