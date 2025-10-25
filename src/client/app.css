@@ -9,25 +9,25 @@
 
 :root{
   /* spacing / radius / elevation */
-  --r: 14px;
-  --r-lg: 18px;
-  --gap: 18px;
-  --shadow: 0 8px 24px rgba(0,0,0,.08);
-  --shadow-hover: 0 12px 32px rgba(0,0,0,.12);
+  --r: 8px;
+  --r-lg: 12px;
+  --gap: 16px;
+  --shadow: 0 2px 8px rgba(0,0,0,.04);
+  --shadow-hover: 0 4px 16px rgba(0,0,0,.08);
 
   /* theme tokens (auto-fall back to Now tokens if present) */
-  --bg: var(--now-surface, #f6f7fb);
+  --bg: var(--now-surface, #fafbfc);
   --card: var(--now-card-bg, #ffffff);
-  --text: var(--now-text, #1b1a19);
-  --muted: var(--now-metadata, #5f6368);
-  --line: var(--now-divider, #e8eaf0);
+  --text: var(--now-text, #111827);
+  --muted: var(--now-metadata, #6b7280);
+  --line: var(--now-divider, #f3f4f6);
 
   /* brand + accents */
-  --brand: #2f6ff6;
-  --brand-2: #06b6d4;
-  --ok: #16a34a;
+  --brand: #0f172a;
+  --brand-2: #3b82f6;
+  --ok: #10b981;
   --warn: #f59e0b;
-  --error: #e11d48;
+  --error: #ef4444;
 
   /* glass */
   --glass: rgba(255,255,255,.65);
