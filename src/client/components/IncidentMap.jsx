@@ -1,8 +1,6 @@
 import React, { useEffect, useMemo } from 'react';
 import { MapContainer, TileLayer, CircleMarker, Popup, useMap } from 'react-leaflet';
 import L from 'leaflet';
-import 'leaflet.markercluster';
-import MarkerClusterGroup from 'react-leaflet-cluster';
 import './IncidentMap.css';
 
 // Fix for default markers in React Leaflet
@@ -172,63 +170,26 @@ export default function IncidentMap({
           onMapBoundsChange={onMapBoundsChange}
         />
 
-        <MarkerClusterGroup
-          chunkedLoading
-          showCoverageOnHover={false}
-          spiderfyOnMaxZoom={true}
-          maxClusterRadius={40}
-          polygonOptions={{
-            fillColor: 'var(--brand)',
-            color: 'var(--brand)',
-            weight: 2,
-            opacity: 0.5,
-            fillOpacity: 0.2
-          }}
-        >
-          {locationGroups.map((group, index) => {
-          chunkedLoading
-          showCoverageOnHover={false}
-          spiderfyOnMaxZoom={true}
-          maxClusterRadius={40}
-          polygonOptions={{
-            fillColor: 'var(--brand)',
-            color: 'var(--brand)',
-            weight: 2,
-            opacity: 0.5,
-            fillOpacity: 0.2
-          }}
-        >
-          {locationGroups.map((group, index) => {
-            const incidentCount = group.incidents.length;
-            const radius = Math.max(8, Math.min(20, 8 + Math.log2(incidentCount) * 4));
-            
-            // Use the first incident's priority for color if single incident
-            const primaryIncident = group.incidents[0];
-            const color = incidentCount === 1 ? 
-              getPriorityColor(primaryIncident.priority) : 'var(--brand)';
+        {locationGroups.map((group, index) => {
+          const incidentCount = group.incidents.length;
+          const radius = Math.max(8, Math.min(25, 8 + incidentCount * 3));
+          
+          // Use the first incident's priority for color if single incident
+          const primaryIncident = group.incidents[0];
+          const color = incidentCount === 1 ? 
+            getPriorityColor(primaryIncident.priority) : '#1E88E5';
 
-            return (
-              <CircleMarker
-                key={index}
-                center={group.position}
-                radius={radius}
-                fillColor={color}
-                color="white"
-                weight={2}
-                opacity={1}
-                fillOpacity={0.8}
-                className="leaflet-circle-marker"
-                eventHandlers={{
-                  mouseover: (e) => {
-                    const layer = e.target;
-                    layer.setRadius(radius * 1.2);
-                  },
-                  mouseout: (e) => {
-                    const layer = e.target;
-                    layer.setRadius(radius);
-                  }
-                }}
-              >
+          return (
+            <CircleMarker
+              key={index}
+              center={group.position}
+              radius={radius}
+              fillColor={color}
+              color="white"
+              weight={2}
+              opacity={1}
+              fillOpacity={0.8}
+            >
               <Popup maxWidth={350} className="incident-popup">
                 <div className="popup-content">
                   <div className="popup-location-header">
