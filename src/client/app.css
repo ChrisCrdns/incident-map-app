@@ -23,10 +23,10 @@
   --line: var(--now-divider, #f3f4f6);
 
   /* brand + accents */
-  --brand: #0f172a;
+  --brand: #2563eb;
   --brand-2: #3b82f6;
-  --ok: #10b981;
-  --warn: #f59e0b;
+  --ok: #22c55e;
+  --warn: #eab308;
   --error: #ef4444;
 
   /* glass */

@@ -20,19 +20,19 @@
 
 .list-header h2 {
   margin: 0;
-  color: var(--text);
+  color: var(--brand);
   font-size: 16px;
   font-weight: 500;
   font-family: 'Inter', system-ui, sans-serif;
 }
 
 .incident-count {
-  background: #1E88E5;
+  background: var(--brand);
   color: white;
-  padding: 4px 12px;
-  border-radius: 16px;
+  padding: 4px 10px;
+  border-radius: var(--r);
   font-size: 12px;
-  font-weight: 600;
+  font-weight: 500;
 }
 
 .incident-cards {
